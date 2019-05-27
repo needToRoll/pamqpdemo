@@ -1,0 +1,10 @@
+server:
+  port: 8083
+cloud:
+  buergi:
+    pactamqpdemo:
+      amqp:
+        person:
+          routingkey: created
+          exchange: pactamqpdemo.person
+          queue: pactamqpdemo.person.created
