@@ -7,6 +7,7 @@ import au.com.dius.pact.provider.junit.target.HttpTarget;
 import au.com.dius.pact.provider.junit.target.TestTarget;
 import au.com.dius.pact.provider.spring.SpringRestPactRunner;
 import au.com.dius.pact.provider.spring.target.SpringBootHttpTarget;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,6 +18,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @RunWith(SpringRestPactRunner.class)
 @PactFolder("target/pact")
 @Provider("SpringPersonProvider")
+@Ignore
 public class SpringProvidedPersonClientContractVerificationTest {
 
   @TestTarget

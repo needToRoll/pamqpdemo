@@ -10,7 +10,7 @@
   </parent>
   <groupId>cloud.buergi.playground.pact-aqmp-demo</groupId>
   <artifactId>rest-consumer</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>rest-consumer</name>
   <description>Demo project for Spring Boot</description>
 
