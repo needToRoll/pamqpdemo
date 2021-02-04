@@ -12,11 +12,11 @@ services:
       - "15672:15672"
       - "5672:5672"
   eventconsumer:
-    image: needtoroll/microservice-demo-eventconsumer:v1
+    image: needtoroll/microservice-demo-eventconsumer:v2
     ports:
       - "8081:8081"
     environment:
-      PRING_APPLICATION_JSON: '{"spring": {"rabbitmq": {"host":"rabbitmq"}}}'
+      SPRING_APPLICATION_JSON: '{"spring": {"rabbitmq": {"host":"rabbitmq"}}}'
     depends_on:
       - rabbitmq
   provider:

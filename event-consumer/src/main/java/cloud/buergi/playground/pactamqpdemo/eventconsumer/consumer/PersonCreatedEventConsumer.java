@@ -11,19 +11,21 @@ import java.util.Random;
 @Service
 public class PersonCreatedEventConsumer {
 
-    @Autowired
-    CrudRepository<NewsletterParticipant, Long> repository;
+    final CrudRepository<NewsletterParticipant, Long> repository;
 
-    @RabbitListener(queues = {})
+    public PersonCreatedEventConsumer(CrudRepository<NewsletterParticipant, Long> repository) {
+        this.repository = repository;
+    }
+
+    @RabbitListener(queues = {"${cloud.buergi.pactamqpdemo.amqp.person.queue}"})
     public void receive(NewsletterParticipant message){
-        int virtualDelay = new Random().nextInt(12000);
+        int virtualDelay = new Random().nextInt(15000);
         try {
             Thread.sleep(virtualDelay);
+            repository.save(message);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        repository.save(message);
-
     }
 
 }
